@@ -21,6 +21,8 @@ export function reflectionTemplate(
   }
 
   if (!context.options.getValue('hidePageTitle')) {
+    // needed by sisense.dev
+    md.push(`---\ntitle: ${context.pageTitle(page)}\n---`);
     md.push(heading(1, context.pageTitle(page)));
   }
 
