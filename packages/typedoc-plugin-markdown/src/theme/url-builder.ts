@@ -66,7 +66,9 @@ export class UrlBuilder {
         EntryPointStrategy.Packages &&
       !Boolean(project.groups)
     ) {
+      // [tuan]: each projectChild is a module (e.g., @sisense/sdk-ui, @sisense/sdk-data, etc)
       project.children?.forEach((projectChild, projectChildIndex) => {
+        console.log('projectChild', projectChild.name, projectChild.url);
         const startIndex = hasReadme ? 2 : 1;
 
         const directoryPosition = projectChildIndex + startIndex;
@@ -119,9 +121,32 @@ export class UrlBuilder {
         });
       });
     } else {
+      // [tuan]: each projectGroup is a kind (e.g., functions, interfaces, etc)
       project.groups?.forEach((projectGroup, projectGroupIndex) => {
+
+        /** [tuan] START generate index.md for each projectGroup */
+        const entryFileName = this.options.getValue('entryFileName') as string;
+
+        const projectGroupUrl = `${project.name}/${this.getPartName(
+          slugify(projectGroup.title),
+          projectGroupIndex,
+        )}/${entryFileName}`;
+
+        // clone the project with only the current group
+        const groupProject = Object.create(project);
+        groupProject.groups = groupProject.groups?.filter((group) => group.title === projectGroup.title);
+
+        this.urls.push(
+          new UrlMapping(projectGroupUrl, groupProject as any, this.theme.projectTemplate),
+        );
+        /** [tuan] END generate index.md for each projectGroup */
+
+        console.log('--projectGroup', projectGroupUrl);
+
         projectGroup.children?.forEach(
+          // [tuan]: each projectGroupChild is an API item (e.g., Chart, ChartProps, etc)
           (projectGroupChild, projectGroupChildIndex) => {
+            console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
             this.buildUrlsFromGroup(projectGroupChild, {
               directoryPosition: projectGroupIndex + startIndex,
               pagePosition: projectGroupChildIndex + startIndex,
@@ -175,9 +200,27 @@ export class UrlBuilder {
         }
       } else {
         reflection.groups?.forEach((group, groupIndex) => {
+          /** [tuan] START generate index.md for each group of namespace */
+          if (group.title === 'Functions') {
+            const entryFileName = this.options.getValue('entryFileName') as string;
+            const groupUrl = `${url.replace(entryFileName, '')}${this.getPartName(
+              slugify(group.title),
+              groupIndex,
+            )}/${entryFileName}`;
+
+            this.urls.push(
+              new UrlMapping(groupUrl, reflection as any, this.theme.projectTemplate),
+            );
+
+            console.log('------group', group.title, groupUrl);
+          }
+          /** [tuan] END generate index.md for each group of namespace */
+
           if (group.categories) {
             group.categories.forEach((category, categoryIndex) => {
+              console.log('--------category', category.title);
               category.children.forEach((categoryChild, categoryChildIndex) => {
+                console.log('--------categoryChild', categoryChild.name);
                 const mapping = this.getTemplateMapping(categoryChild.kind);
                 this.buildUrlsFromGroup(categoryChild, {
                   parentUrl: url,
@@ -192,6 +235,7 @@ export class UrlBuilder {
             });
           } else {
             group.children.forEach((groupChild, groupChildIndex) => {
+              console.log('--------groupChild', groupChild.name);
               const mapping = this.getTemplateMapping(groupChild.kind);
               this.buildUrlsFromGroup(groupChild, {
                 parentUrl: url,
