@@ -68,10 +68,10 @@ export class UrlBuilder {
     ) {
       // [tuan]: each projectChild is a module (e.g., @sisense/sdk-ui, @sisense/sdk-data, etc)
       project.children?.forEach((projectChild, projectChildIndex) => {
-        /** SISENSE.DEV START */
+        /** CSDK START */
         // Remove @sisense/ prefix from module name
         projectChild.name = projectChild.name.replace('@sisense/', '');
-        /** SISENSE.DEV END */
+        /** CSDK END */
 
         console.log('projectChild', projectChild.name, projectChild.url);
         const startIndex = hasReadme ? 2 : 1;
@@ -128,7 +128,7 @@ export class UrlBuilder {
     } else {
       // [tuan]: each projectGroup is a kind (e.g., functions, interfaces, etc)
       project.groups?.forEach((projectGroup, projectGroupIndex) => {
-        /** SISENSE.DEV START */
+        /** CSDK START */
         // Generate index.md for each projectGroup
         const entryFileName = this.options.getValue('entryFileName') as string;
 
@@ -145,7 +145,7 @@ export class UrlBuilder {
         this.urls.push(
           new UrlMapping(projectGroupUrl, groupProject as any, this.theme.projectKindTemplate),
         );
-        /** SISENSE.DEV END */
+        /** CSDK END */
 
         console.log('--projectGroup', projectGroupUrl);
 
@@ -168,6 +168,7 @@ export class UrlBuilder {
     reflection: DeclarationReflection,
     options: UrlOption,
   ) {
+
     const mapping = this.getTemplateMapping(reflection.kind);
     if (mapping) {
       const directory = options.directory || mapping.directory;
@@ -206,7 +207,7 @@ export class UrlBuilder {
         }
       } else {
         reflection.groups?.forEach((group, groupIndex) => {
-          /** SISENSE.DEV START */
+          /** CSDK START */
           // generate index.md for each functions group of namespace
           if (group.title === 'Functions') {
             const entryFileName = this.options.getValue('entryFileName') as string;
@@ -219,15 +220,13 @@ export class UrlBuilder {
             const groupReflection = Object.create(reflection);
             groupReflection.name = group.title;
 
-            console.log(groupReflection);
-
             this.urls.push(
               new UrlMapping(groupUrl, groupReflection as any, this.theme.projectKindTemplate),
             );
 
             console.log('------group', group.title, groupUrl);
           }
-          /** SISENSE.DEV END */
+          /** CSDK END */
 
           if (group.categories) {
             group.categories.forEach((category, categoryIndex) => {

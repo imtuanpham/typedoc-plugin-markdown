@@ -18,6 +18,16 @@ function comment(context, comment, headingLevel, showSummary = true, showTags = 
             .map((tag) => {
             const tagName = tag.tag.substring(1);
             const tagText = (0, utils_1.camelToTitleCase)(tagName);
+            /** CSDK START */
+            if (tagName === 'deprecated') {
+                const tagDeprecated = [
+                    '::: warning Deprecated',
+                ];
+                tagDeprecated.push(context.commentParts(tag.content));
+                tagDeprecated.push(':::');
+                return tagDeprecated.join('\n');
+            }
+            /** CSDK END */
             const tagMd = [
                 headingLevel ? (0, elements_1.heading)(headingLevel, tagText) : (0, elements_1.bold)(tagText),
             ];

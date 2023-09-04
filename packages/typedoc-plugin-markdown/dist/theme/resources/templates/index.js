@@ -18,6 +18,6 @@ __exportStar(require("./member"), exports);
 __exportStar(require("./project"), exports);
 __exportStar(require("./read-me"), exports);
 __exportStar(require("./reflection"), exports);
-/** SISENSE.DEV START */
+/** CSDK START */
 __exportStar(require("./project-kind"), exports);
-/** SISENSE.DEV END */
+/** CSDK END */

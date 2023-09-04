@@ -14,10 +14,10 @@ function reflectionTemplate(context, page) {
         md.push(context.breadcrumbs(page));
     }
     if (!context.options.getValue('hidePageTitle')) {
-        /** SISENSE.DEV START */
+        /** CSDK START */
         // add title metadata
-        md.push(`---\ntitle: ${context.pageTitle(page)}\n---`);
-        /** SISENSE.DEV END */
+        md.push(`---\ntitle: ${page.model.name}\n---`);
+        /** CSDK END */
         md.push((0, elements_1.heading)(1, context.pageTitle(page)));
     }
     md.push(context.reflectionMember(page.model, 2));

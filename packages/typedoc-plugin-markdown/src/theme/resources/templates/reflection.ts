@@ -21,10 +21,10 @@ export function reflectionTemplate(
   }
 
   if (!context.options.getValue('hidePageTitle')) {
-    /** SISENSE.DEV START */
+    /** CSDK START */
     // add title metadata
-    md.push(`---\ntitle: ${context.pageTitle(page)}\n---`);
-    /** SISENSE.DEV END */
+    md.push(`---\ntitle: ${page.model.name}\n---`);
+    /** CSDK END */
     md.push(heading(1, context.pageTitle(page)));
   }
 

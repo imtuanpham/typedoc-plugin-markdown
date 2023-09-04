@@ -19,9 +19,9 @@ export declare class MarkdownTheme extends Theme {
     getRenderContext(pageEvent: MarkdownPageEvent<Reflection> | null): MarkdownThemeRenderContext;
     readmeTemplate: (pageEvent: MarkdownPageEvent<ProjectReflection>) => string;
     projectTemplate: (pageEvent: MarkdownPageEvent<ProjectReflection>) => string;
-    /** SISENSE.DEV START */
+    /** CSDK START */
     projectKindTemplate: (pageEvent: MarkdownPageEvent<ProjectReflection>) => string;
-    /** SISENSE.DEV END */
+    /** CSDK END */
     reflectionTemplate: (pageEvent: MarkdownPageEvent<DeclarationReflection>) => string;
     memberTemplate: (pageEvent: MarkdownPageEvent<DeclarationReflection>) => string;
     /**

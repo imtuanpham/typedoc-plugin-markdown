@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.projectKindTemplate = void 0;
 /**
- * SISENSE.DEV
+ * CSDK
  * Template for project kind index pages.
  * Adapted from `projectTemplate`.
  *
@@ -24,7 +24,7 @@ function projectKindTemplate(context, page) {
     if (page.model.comment) {
         md.push(context.comment(page.model.comment, 2));
     }
-    md.push(context.pageIndex(page, 2));
+    md.push(context.pageIndex(page, 1));
     md.push(context.members(page.model, 2));
     md.push(context.footer());
     return md.join('\n\n');

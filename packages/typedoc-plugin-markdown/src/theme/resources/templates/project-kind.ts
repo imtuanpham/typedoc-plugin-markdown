@@ -3,7 +3,7 @@ import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 
 /**
- * SISENSE.DEV
+ * CSDK
  * Template for project kind index pages.
  * Adapted from `projectTemplate`.
  *
@@ -33,7 +33,7 @@ export function projectKindTemplate(
     md.push(context.comment(page.model.comment, 2));
   }
 
-  md.push(context.pageIndex(page, 2));
+  md.push(context.pageIndex(page, 1));
 
   md.push(context.members(page.model, 2));
 

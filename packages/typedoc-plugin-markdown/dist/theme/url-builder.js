@@ -67,10 +67,10 @@ class UrlBuilder {
             !Boolean(project.groups)) {
             // [tuan]: each projectChild is a module (e.g., @sisense/sdk-ui, @sisense/sdk-data, etc)
             (_a = project.children) === null || _a === void 0 ? void 0 : _a.forEach((projectChild, projectChildIndex) => {
-                /** SISENSE.DEV START */
+                /** CSDK START */
                 // Remove @sisense/ prefix from module name
                 projectChild.name = projectChild.name.replace('@sisense/', '');
-                /** SISENSE.DEV END */
+                /** CSDK END */
                 console.log('projectChild', projectChild.name, projectChild.url);
                 const startIndex = hasReadme ? 2 : 1;
                 const directoryPosition = projectChildIndex + startIndex;
@@ -111,7 +111,7 @@ class UrlBuilder {
             // [tuan]: each projectGroup is a kind (e.g., functions, interfaces, etc)
             (_b = project.groups) === null || _b === void 0 ? void 0 : _b.forEach((projectGroup, projectGroupIndex) => {
                 var _a, _b;
-                /** SISENSE.DEV START */
+                /** CSDK START */
                 // Generate index.md for each projectGroup
                 const entryFileName = this.options.getValue('entryFileName');
                 const projectGroupUrl = `${project.name}/${this.getPartName((0, utils_1.slugify)(projectGroup.title), projectGroupIndex)}/${entryFileName}`;
@@ -120,7 +120,7 @@ class UrlBuilder {
                 groupProject.name = projectGroup.title;
                 groupProject.groups = (_a = groupProject.groups) === null || _a === void 0 ? void 0 : _a.filter((group) => group.title === projectGroup.title);
                 this.urls.push(new typedoc_1.UrlMapping(projectGroupUrl, groupProject, this.theme.projectKindTemplate));
-                /** SISENSE.DEV END */
+                /** CSDK END */
                 console.log('--projectGroup', projectGroupUrl);
                 (_b = projectGroup.children) === null || _b === void 0 ? void 0 : _b.forEach(
                 // [tuan]: each projectGroupChild is an API item (e.g., Chart, ChartProps, etc)
@@ -174,7 +174,7 @@ class UrlBuilder {
             }
             else {
                 (_b = reflection.groups) === null || _b === void 0 ? void 0 : _b.forEach((group, groupIndex) => {
-                    /** SISENSE.DEV START */
+                    /** CSDK START */
                     // generate index.md for each functions group of namespace
                     if (group.title === 'Functions') {
                         const entryFileName = this.options.getValue('entryFileName');
@@ -182,11 +182,10 @@ class UrlBuilder {
                         // clone the reflection to customize the index.md
                         const groupReflection = Object.create(reflection);
                         groupReflection.name = group.title;
-                        console.log(groupReflection);
                         this.urls.push(new typedoc_1.UrlMapping(groupUrl, groupReflection, this.theme.projectKindTemplate));
                         console.log('------group', group.title, groupUrl);
                     }
-                    /** SISENSE.DEV END */
+                    /** CSDK END */
                     if (group.categories) {
                         group.categories.forEach((category, categoryIndex) => {
                             console.log('--------category', category.title);

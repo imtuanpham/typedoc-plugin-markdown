@@ -24,11 +24,11 @@ class MarkdownTheme extends typedoc_1.Theme {
         this.projectTemplate = (pageEvent) => {
             return this.getRenderContext(pageEvent).projectTemplate(pageEvent);
         };
-        /** SISENSE.DEV START */
+        /** CSDK START */
         this.projectKindTemplate = (pageEvent) => {
             return this.getRenderContext(pageEvent).projectKindTemplate(pageEvent);
         };
-        /** SISENSE.DEV END */
+        /** CSDK END */
         this.reflectionTemplate = (pageEvent) => {
             return this.getRenderContext(pageEvent).reflectionTemplate(pageEvent);
         };

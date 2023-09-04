@@ -2,7 +2,7 @@ import { ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 /**
- * SISENSE.DEV
+ * CSDK
  * Template for project kind index pages.
  * Adapted from `projectTemplate`.
  *

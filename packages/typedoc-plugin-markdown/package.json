@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-markdown",
-  "version": "4.0.0-next.20",
+  "version": "4.0.0-next.29",
   "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
   "main": "dist/index.js",
   "files": [
@@ -13,6 +13,7 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && npm-run-all task:code",
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "test": "jest --colors",
     "prestubs": "npm run build",
     "stubs": "npm-run-all stubs:*",
@@ -27,6 +28,7 @@
     "docs:md-1": "typedoc --options ../../stubs/.config/typedoc.1.cjs --out ./out/md/md-1",
     "docs:md-2": "typedoc --options ../../stubs/.config/typedoc.2.cjs --out ./out/md/md-2",
     "docs:md-3": "typedoc --options ../../stubs/.config/typedoc.3.cjs --out ./out/md/md-3",
+    "docs:md-csdk": "typedoc --options ../../stubs/.config/typedoc.csdk.cjs --out ./out/md/md-csdk",
     "docs:html": "typedoc --options ../../stubs/.config/typedoc.base.cjs  --out ./out/html",
     "task:docs": "node scripts/docs/docs.mjs",
     "task:code": "npm-run-all task:code:*",
