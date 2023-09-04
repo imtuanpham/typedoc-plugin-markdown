@@ -9,6 +9,14 @@ import { unEscapeChars } from './utils';
 
 export const heading = (level: number, text: string) => {
   level = level > 6 ? 6 : level;
+
+  /** SISENSE.DEV START */
+  // add title metadata needed by sisense.dev
+  if (level === 1) {
+    return `---\ntitle: ${text}\n---\n\n${[...Array(level)].map(() => '#').join('')} ${text}`;
+  }
+  /** SISENSE.DEV END */
+
   return `${[...Array(level)].map(() => '#').join('')} ${text}`;
 };
 

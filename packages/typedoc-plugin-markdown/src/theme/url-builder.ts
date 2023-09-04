@@ -68,6 +68,11 @@ export class UrlBuilder {
     ) {
       // [tuan]: each projectChild is a module (e.g., @sisense/sdk-ui, @sisense/sdk-data, etc)
       project.children?.forEach((projectChild, projectChildIndex) => {
+        /** SISENSE.DEV START */
+        // Remove @sisense/ prefix from module name
+        projectChild.name = projectChild.name.replace('@sisense/', '');
+        /** SISENSE.DEV END */
+
         console.log('projectChild', projectChild.name, projectChild.url);
         const startIndex = hasReadme ? 2 : 1;
 
@@ -123,8 +128,8 @@ export class UrlBuilder {
     } else {
       // [tuan]: each projectGroup is a kind (e.g., functions, interfaces, etc)
       project.groups?.forEach((projectGroup, projectGroupIndex) => {
-
-        /** [tuan] START generate index.md for each projectGroup */
+        /** SISENSE.DEV START */
+        // Generate index.md for each projectGroup
         const entryFileName = this.options.getValue('entryFileName') as string;
 
         const projectGroupUrl = `${project.name}/${this.getPartName(
@@ -134,12 +139,13 @@ export class UrlBuilder {
 
         // clone the project with only the current group
         const groupProject = Object.create(project);
+        groupProject.name = projectGroup.title;
         groupProject.groups = groupProject.groups?.filter((group) => group.title === projectGroup.title);
 
         this.urls.push(
           new UrlMapping(projectGroupUrl, groupProject as any, this.theme.projectTemplate),
         );
-        /** [tuan] END generate index.md for each projectGroup */
+        /** SISENSE.DEV END */
 
         console.log('--projectGroup', projectGroupUrl);
 
@@ -200,7 +206,8 @@ export class UrlBuilder {
         }
       } else {
         reflection.groups?.forEach((group, groupIndex) => {
-          /** [tuan] START generate index.md for each group of namespace */
+          /** SISENSE.DEV START */
+          // generate index.md for each functions group of namespace
           if (group.title === 'Functions') {
             const entryFileName = this.options.getValue('entryFileName') as string;
             const groupUrl = `${url.replace(entryFileName, '')}${this.getPartName(
@@ -214,7 +221,7 @@ export class UrlBuilder {
 
             console.log('------group', group.title, groupUrl);
           }
-          /** [tuan] END generate index.md for each group of namespace */
+          /** SISENSE.DEV END */
 
           if (group.categories) {
             group.categories.forEach((category, categoryIndex) => {
