@@ -21,6 +21,10 @@ export function memberTemplate(
   }
 
   if (!context.options.getValue('hidePageTitle')) {
+    /** SISENSE.DEV START */
+    // add title metadata
+    md.push(`---\ntitle: ${context.pageTitle(page)}\n---`);
+    /** SISENSE.DEV END */
     md.push(heading(1, context.pageTitle(page)));
   }
 

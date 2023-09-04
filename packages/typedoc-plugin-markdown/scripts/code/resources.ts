@@ -18,6 +18,9 @@ const resourcesPath = path.join(
 const templateFiles = getFiles('templates').filter((file) => file !== 'index');
 const templateSymbols = [
   { symbolName: 'memberTemplate' },
+  /** SISENSE.DEV START */
+  { symbolName: 'projectKindTemplate' },
+  /** SISENSE.DEV END */
   { symbolName: 'projectTemplate' },
   { symbolName: 'readmeTemplate' },
   { symbolName: 'reflectionTemplate' },

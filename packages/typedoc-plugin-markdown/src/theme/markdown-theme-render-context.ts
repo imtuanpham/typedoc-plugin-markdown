@@ -50,6 +50,7 @@ import { typeOperatorType } from './resources/partials/type.type-operator';
 import { unionType } from './resources/partials/type.union';
 import { unknownType } from './resources/partials/type.unknown';
 import { memberTemplate } from './resources/templates/member';
+import { projectKindTemplate } from './resources/templates/project-kind';
 import { projectTemplate } from './resources/templates/project';
 import { readmeTemplate } from './resources/templates/read-me';
 import { reflectionTemplate } from './resources/templates/reflection';
@@ -100,6 +101,8 @@ export class MarkdownThemeRenderContext {
   // templates
   /** @hidden */
   memberTemplate = bind(memberTemplate, this);
+  /** @hidden */
+  projectKindTemplate = bind(projectKindTemplate, this);
   /** @hidden */
   projectTemplate = bind(projectTemplate, this);
   /** @hidden */

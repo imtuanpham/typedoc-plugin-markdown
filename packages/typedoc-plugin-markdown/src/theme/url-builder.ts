@@ -143,7 +143,7 @@ export class UrlBuilder {
         groupProject.groups = groupProject.groups?.filter((group) => group.title === projectGroup.title);
 
         this.urls.push(
-          new UrlMapping(projectGroupUrl, groupProject as any, this.theme.projectTemplate),
+          new UrlMapping(projectGroupUrl, groupProject as any, this.theme.projectKindTemplate),
         );
         /** SISENSE.DEV END */
 
@@ -215,8 +215,14 @@ export class UrlBuilder {
               groupIndex,
             )}/${entryFileName}`;
 
+            // clone the reflection to customize the index.md
+            const groupReflection = Object.create(reflection);
+            groupReflection.name = group.title;
+
+            console.log(groupReflection);
+
             this.urls.push(
-              new UrlMapping(groupUrl, reflection as any, this.theme.projectTemplate),
+              new UrlMapping(groupUrl, groupReflection as any, this.theme.projectKindTemplate),
             );
 
             console.log('------group', group.title, groupUrl);

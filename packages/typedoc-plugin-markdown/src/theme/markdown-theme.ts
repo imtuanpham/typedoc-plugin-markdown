@@ -42,6 +42,12 @@ export class MarkdownTheme extends Theme {
     return this.getRenderContext(pageEvent).projectTemplate(pageEvent);
   };
 
+  /** SISENSE.DEV START */
+  projectKindTemplate = (pageEvent: MarkdownPageEvent<ProjectReflection>) => {
+    return this.getRenderContext(pageEvent).projectKindTemplate(pageEvent);
+  };
+  /** SISENSE.DEV END */
+
   reflectionTemplate = (
     pageEvent: MarkdownPageEvent<DeclarationReflection>,
   ) => {
