@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-markdown",
-  "version": "4.0.0-next.37",
+  "version": "4.0.0-next.38",
   "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
   "main": "dist/index.js",
   "files": [
@@ -10,7 +10,6 @@
     "lint": "npm-run-all lint:*",
     "lint:ts": "eslint ./src --ext .ts",
     "lint:markdown": "npm run docs && markdownlint ./out/md",
-    "prepublishOnly": "npm run build",
     "prebuild": "rm -rf dist",
     "build": "tsc",
     "build:watch": "tsc --watch",
