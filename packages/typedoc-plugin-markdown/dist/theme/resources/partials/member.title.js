@@ -9,6 +9,9 @@ const utils_1 = require("../../../support/utils");
 function memberTitle(context, reflection, typeParams = false) {
     const md = [];
     md.push(`${(0, utils_1.escapeChars)(reflection.name)}`);
+    /** CSDK START */
+    md.push(context.memberBadge(reflection));
+    /** CSDK END */
     if (typeParams && reflection.typeParameters) {
         const typeParameters = reflection.typeParameters
             .map((typeParameter) => typeParameter.name)

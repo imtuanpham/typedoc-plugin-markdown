@@ -58,6 +58,8 @@ function getTable(context, group) {
     return (0, elements_1.table)(headers, rows);
 }
 function getList(context, group) {
-    const children = group.children.map((child) => `- [${(0, utils_1.escapeChars)(child.name)}](${context.relativeURL(child.url)})`);
+    const children = group.children.map((child) => 
+    // CSDK: add member badge
+    `- [${(0, utils_1.escapeChars)(child.name)}](${context.relativeURL(child.url)}) ${context.memberBadge(child)}`);
     return children.join('\n');
 }
