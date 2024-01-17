@@ -73,7 +73,7 @@ export class UrlBuilder {
         projectChild.name = projectChild.name.replace('@sisense/', '');
         /** CSDK END */
 
-        console.log('projectChild', projectChild.name, projectChild.url);
+        // console.log('projectChild', projectChild.name, projectChild.url);
         const startIndex = hasReadme ? 2 : 1;
 
         const directoryPosition = projectChildIndex + startIndex;
@@ -147,12 +147,12 @@ export class UrlBuilder {
         );
         /** CSDK END */
 
-        console.log('--projectGroup', projectGroupUrl);
+        // console.log('--projectGroup', projectGroupUrl);
 
         projectGroup.children?.forEach(
           // [tuan]: each projectGroupChild is an API item (e.g., Chart, ChartProps, etc)
           (projectGroupChild, projectGroupChildIndex) => {
-            console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
+            // console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
             this.buildUrlsFromGroup(projectGroupChild, {
               directoryPosition: projectGroupIndex + startIndex,
               pagePosition: projectGroupChildIndex + startIndex,
@@ -224,15 +224,15 @@ export class UrlBuilder {
               new UrlMapping(groupUrl, groupReflection as any, this.theme.projectKindTemplate),
             );
 
-            console.log('------group', group.title, groupUrl);
+            // console.log('------group', group.title, groupUrl);
           }
           /** CSDK END */
 
           if (group.categories) {
             group.categories.forEach((category, categoryIndex) => {
-              console.log('--------category', category.title);
+              // console.log('--------category', category.title);
               category.children.forEach((categoryChild, categoryChildIndex) => {
-                console.log('--------categoryChild', categoryChild.name);
+                // console.log('--------categoryChild', categoryChild.name);
                 const mapping = this.getTemplateMapping(categoryChild.kind);
                 this.buildUrlsFromGroup(categoryChild, {
                   parentUrl: url,
@@ -247,7 +247,7 @@ export class UrlBuilder {
             });
           } else {
             group.children.forEach((groupChild, groupChildIndex) => {
-              console.log('--------groupChild', groupChild.name);
+              // console.log('--------groupChild', groupChild.name);
               const mapping = this.getTemplateMapping(groupChild.kind);
               this.buildUrlsFromGroup(groupChild, {
                 parentUrl: url,
