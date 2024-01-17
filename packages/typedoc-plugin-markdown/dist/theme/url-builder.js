@@ -71,7 +71,7 @@ class UrlBuilder {
                 // Remove @sisense/ prefix from module name
                 projectChild.name = projectChild.name.replace('@sisense/', '');
                 /** CSDK END */
-                console.log('projectChild', projectChild.name, projectChild.url);
+                // console.log('projectChild', projectChild.name, projectChild.url);
                 const startIndex = hasReadme ? 2 : 1;
                 const directoryPosition = projectChildIndex + startIndex;
                 const url = `${this.getPartName(projectChild.name, directoryPosition)}/${Boolean(projectChild.readme)
@@ -121,11 +121,11 @@ class UrlBuilder {
                 groupProject.groups = (_a = groupProject.groups) === null || _a === void 0 ? void 0 : _a.filter((group) => group.title === projectGroup.title);
                 this.urls.push(new typedoc_1.UrlMapping(projectGroupUrl, groupProject, this.theme.projectKindTemplate));
                 /** CSDK END */
-                console.log('--projectGroup', projectGroupUrl);
+                // console.log('--projectGroup', projectGroupUrl);
                 (_b = projectGroup.children) === null || _b === void 0 ? void 0 : _b.forEach(
                 // [tuan]: each projectGroupChild is an API item (e.g., Chart, ChartProps, etc)
                 (projectGroupChild, projectGroupChildIndex) => {
-                    console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
+                    // console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
                     this.buildUrlsFromGroup(projectGroupChild, {
                         directoryPosition: projectGroupIndex + startIndex,
                         pagePosition: projectGroupChildIndex + startIndex,
@@ -183,14 +183,14 @@ class UrlBuilder {
                         const groupReflection = Object.create(reflection);
                         groupReflection.name = group.title;
                         this.urls.push(new typedoc_1.UrlMapping(groupUrl, groupReflection, this.theme.projectKindTemplate));
-                        console.log('------group', group.title, groupUrl);
+                        // console.log('------group', group.title, groupUrl);
                     }
                     /** CSDK END */
                     if (group.categories) {
                         group.categories.forEach((category, categoryIndex) => {
-                            console.log('--------category', category.title);
+                            // console.log('--------category', category.title);
                             category.children.forEach((categoryChild, categoryChildIndex) => {
-                                console.log('--------categoryChild', categoryChild.name);
+                                // console.log('--------categoryChild', categoryChild.name);
                                 const mapping = this.getTemplateMapping(categoryChild.kind);
                                 this.buildUrlsFromGroup(categoryChild, {
                                     parentUrl: url,
@@ -203,7 +203,7 @@ class UrlBuilder {
                     }
                     else {
                         group.children.forEach((groupChild, groupChildIndex) => {
-                            console.log('--------groupChild', groupChild.name);
+                            // console.log('--------groupChild', groupChild.name);
                             const mapping = this.getTemplateMapping(groupChild.kind);
                             this.buildUrlsFromGroup(groupChild, {
                                 parentUrl: url,
