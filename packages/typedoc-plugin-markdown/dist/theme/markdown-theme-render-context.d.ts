@@ -59,6 +59,10 @@ export declare class MarkdownThemeRenderContext {
     sources: (reflection: import("typedoc").DeclarationReflection | import("typedoc").SignatureReflection, headingLevel: number) => string;
     /** @hidden */
     memberTitle: (reflection: import("typedoc").DeclarationReflection, typeParams?: boolean | undefined) => string;
+    /** CSDK START */
+    /** @hidden */
+    memberBadge: (reflection: import("typedoc").DeclarationReflection) => string;
+    /** CSDK END */
     /** @hidden */
     member: (reflection: import("typedoc").DeclarationReflection, headingLevel: number) => string;
     /** @hidden */

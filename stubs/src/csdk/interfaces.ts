@@ -10,7 +10,16 @@ export interface Animal {
   name?: string;
 }
 
+/**
+ * Description of Dog
+ *
+ * @beta
+ */
 export interface Dog extends Animal {
+  /**
+   * Breed of dog
+   * @beta
+   */
   breed: string;
 
   /**

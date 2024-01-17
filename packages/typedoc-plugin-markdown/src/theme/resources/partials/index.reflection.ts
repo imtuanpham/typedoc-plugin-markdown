@@ -75,7 +75,8 @@ function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup | 
 function getList(context: MarkdownThemeRenderContext, group: ReflectionGroup | ReflectionCategory) {
   const children = group.children.map(
     (child) =>
-      `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
+      // CSDK: add member badge
+      `- [${escapeChars(child.name)}](${context.relativeURL(child.url)}) ${context.memberBadge(child)}`,
   );
   return children.join('\n');
 }

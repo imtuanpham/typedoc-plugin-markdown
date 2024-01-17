@@ -22,6 +22,7 @@ import { signatureMemberIdentifier } from './resources/partials/member.signature
 import { signatureMember } from './resources/partials/member.signature';
 import { sources } from './resources/partials/member.sources';
 import { memberTitle } from './resources/partials/member.title';
+import { memberBadge } from './resources/partials/member.badge';
 import { member } from './resources/partials/member';
 import { typeDeclarationMember } from './resources/partials/member.type-declaration';
 import { members } from './resources/partials/members';
@@ -149,6 +150,10 @@ export class MarkdownThemeRenderContext {
   sources = bind(sources, this);
   /** @hidden */
   memberTitle = bind(memberTitle, this);
+  /** CSDK START */
+  /** @hidden */
+  memberBadge = bind(memberBadge, this);
+  /** CSDK END */
   /** @hidden */
   member = bind(member, this);
   /** @hidden */

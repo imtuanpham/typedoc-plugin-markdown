@@ -45,6 +45,7 @@ const member_signature_identifier_1 = require("./resources/partials/member.signa
 const member_signature_1 = require("./resources/partials/member.signature");
 const member_sources_1 = require("./resources/partials/member.sources");
 const member_title_1 = require("./resources/partials/member.title");
+const member_badge_1 = require("./resources/partials/member.badge");
 const member_1 = require("./resources/partials/member");
 const member_type_declaration_1 = require("./resources/partials/member.type-declaration");
 const members_1 = require("./resources/partials/members");
@@ -157,6 +158,10 @@ class MarkdownThemeRenderContext {
         this.sources = bind(member_sources_1.sources, this);
         /** @hidden */
         this.memberTitle = bind(member_title_1.memberTitle, this);
+        /** CSDK START */
+        /** @hidden */
+        this.memberBadge = bind(member_badge_1.memberBadge, this);
+        /** CSDK END */
         /** @hidden */
         this.member = bind(member_1.member, this);
         /** @hidden */
