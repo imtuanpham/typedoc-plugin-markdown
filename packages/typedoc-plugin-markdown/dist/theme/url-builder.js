@@ -234,7 +234,12 @@ class UrlBuilder {
                 ? friendlyName
                 : `${kindAlias}.${friendlyName}`;
         }
-        const alias = reflection.getAlias().replace(/^_/, '');
+        let alias = reflection.getAlias().replace(/^_/, '');
+        /** CSDK START */
+        // TypeDoc checks and adds a suffix '-#' to an alias if it's a duplicate across all modules
+        // This is not what we want as some alias may be the same across modules, so we remove the prefix
+        alias = alias.replace(/-\d+$/, '');
+        /** CSDK END */
         const parentDir = options.parentUrl
             ? path.dirname(options.parentUrl)
             : null;

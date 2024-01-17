@@ -60,6 +60,6 @@ function getTable(context, group) {
 function getList(context, group) {
     const children = group.children.map((child) => 
     // CSDK: add member badge
-    `- [${(0, utils_1.escapeChars)(child.name)}](${context.relativeURL(child.url)}) ${context.memberBadge(child)}`);
+    `- [${(0, utils_1.escapeChars)(child.name)}](${context.relativeURL(child.url)})${context.memberBadge(child)}`);
     return children.join('\n');
 }
