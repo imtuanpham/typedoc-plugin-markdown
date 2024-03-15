@@ -16,6 +16,12 @@ title: child-package-1
 
 ## Functions
 
+### Category 1
+
 - [alphaFunction](functions/function.alphaFunction.md) <Badge type="alpha" text="Alpha" />
 - [betaFunction](functions/function.betaFunction.md) <Badge type="beta" text="Beta" />
+
+### Category 2
+
 - [someFunction](functions/function.someFunction.md)
+- [someFunction2](functions/function.someFunction2.md)

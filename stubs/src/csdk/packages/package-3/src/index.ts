@@ -95,6 +95,7 @@ export const alphaFunction = (someParam: number) => {
  *
  * @param someParam  This is some numeric parameter.
  * @returns This is a numeric return value.
+ * @category Some Category
  */
 export const someFunction = (someParam: number) => {
   return 0;
