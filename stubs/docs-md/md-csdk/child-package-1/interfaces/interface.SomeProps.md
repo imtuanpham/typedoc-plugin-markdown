@@ -4,10 +4,6 @@ title: SomeProps
 
 # Interface SomeProps
 
-## Extended By
-
-- [`SomeConfig`](interface.SomeConfig.md)
-
 ## Properties
 
 ### prop1

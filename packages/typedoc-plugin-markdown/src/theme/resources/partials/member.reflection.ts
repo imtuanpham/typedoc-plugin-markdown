@@ -26,9 +26,12 @@ export function reflectionMember(
     md.push(context.comment(reflection.comment, headingLevel));
   }
 
-  if (reflection.typeHierarchy?.next) {
-    md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
-  }
+  /** CSDK START */
+  // Disable type hierarchy
+  // if (reflection.typeHierarchy?.next) {
+  //   md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
+  // }
+  /** CSDK END */
 
   if (!reflection.kindOf(ReflectionKind.Class) && reflection.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));

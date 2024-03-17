@@ -6,10 +6,6 @@ title: Dog
 
 Description of Dog
 
-## Extends
-
-- [`Animal`](interface.Animal.md)
-
 ## Properties
 
 ### Old Stuff (Deprecated)
@@ -35,7 +31,3 @@ Breed of dog
 #### name
 
 > **name**?: `string`
-
-##### Inherited from
-
-[`Animal`](interface.Animal.md).[`name`](interface.Animal.md#name)

@@ -8,7 +8,6 @@ const helpers_1 = require("../../helpers");
  * @category Partials
  */
 function reflectionMember(context, reflection, headingLevel) {
-    var _a;
     const md = [];
     if (reflection.flags.isAbstract) {
         md.push((0, elements_1.bold)((0, elements_1.backTicks)('abstract')));
@@ -16,9 +15,12 @@ function reflectionMember(context, reflection, headingLevel) {
     if (reflection.comment) {
         md.push(context.comment(reflection.comment, headingLevel));
     }
-    if ((_a = reflection.typeHierarchy) === null || _a === void 0 ? void 0 : _a.next) {
-        md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
-    }
+    /** CSDK START */
+    // Disable type hierarchy
+    // if (reflection.typeHierarchy?.next) {
+    //   md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
+    // }
+    /** CSDK END */
     if (!reflection.kindOf(typedoc_1.ReflectionKind.Class) && reflection.typeParameters) {
         md.push((0, elements_1.heading)(headingLevel, 'Type parameters'));
         md.push(context.typeParametersTable(reflection.typeParameters));
