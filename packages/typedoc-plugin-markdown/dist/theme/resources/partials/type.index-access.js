@@ -15,3 +15,4 @@ function indexAccessType(context, model) {
     return md.join('');
 }
 exports.indexAccessType = indexAccessType;
+//# sourceMappingURL=type.index-access.js.map

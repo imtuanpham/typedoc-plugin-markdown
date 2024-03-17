@@ -25,3 +25,4 @@ export declare class MarkdownPageEvent<out Model = unknown> extends Event {
     static readonly END = "endPage";
     constructor(name: string, model: Model);
 }
+//# sourceMappingURL=events.d.ts.map

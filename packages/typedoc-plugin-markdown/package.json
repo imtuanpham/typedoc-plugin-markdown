@@ -1,6 +1,6 @@
 {
   "name": "@sisense/typedoc-plugin-markdown",
-  "version": "4.0.0-next.45",
+  "version": "4.0.0-next.46",
   "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
   "main": "dist/index.js",
   "files": [
@@ -11,7 +11,7 @@
     "lint:ts": "eslint ./src --ext .ts",
     "lint:markdown": "npm run docs && markdownlint ./out/md",
     "prebuild": "rm -rf dist",
-    "build": "tsc",
+    "build": "tsc --sourceMap",
     "build:watch": "tsc --watch",
     "test": "jest --colors",
     "prestubs": "npm run build",
@@ -54,6 +54,6 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.24.0"
+    "typedoc": ">=0.25.12"
   }
 }

@@ -30,3 +30,4 @@ function projectKindTemplate(context, page) {
     return md.join('\n\n');
 }
 exports.projectKindTemplate = projectKindTemplate;
+//# sourceMappingURL=project-kind.js.map

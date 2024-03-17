@@ -22,12 +22,15 @@ export function inheritance(
     md.push(typeAndParent(context, reflection.implementationOf));
   }
 
-  if (reflection.inheritedFrom) {
-    if (headingLevel !== -1) {
-      md.push(heading(headingLevel, 'Inherited from'));
-    }
-    md.push(typeAndParent(context, reflection.inheritedFrom));
-  }
+  /* CSDK START */
+  // Disable inheritance
+  // if (reflection.inheritedFrom) {
+  //   if (headingLevel !== -1) {
+  //     md.push(heading(headingLevel, 'Inherited from'));
+  //   }
+  //   md.push(typeAndParent(context, reflection.inheritedFrom));
+  // }
+  /* CSDK END */
 
   if (reflection.overwrites) {
     if (headingLevel !== -1) {

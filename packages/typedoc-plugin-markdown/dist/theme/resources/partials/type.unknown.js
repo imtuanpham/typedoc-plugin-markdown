@@ -9,3 +9,4 @@ function unknownType(context, model) {
     return (0, elements_1.backTicks)(model.name);
 }
 exports.unknownType = unknownType;
+//# sourceMappingURL=type.unknown.js.map

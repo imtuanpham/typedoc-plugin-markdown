@@ -45,3 +45,4 @@ function findPackage(model) {
     }
     return null;
 }
+//# sourceMappingURL=header.js.map

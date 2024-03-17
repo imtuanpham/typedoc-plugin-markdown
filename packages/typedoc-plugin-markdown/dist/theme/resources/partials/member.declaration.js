@@ -59,3 +59,4 @@ function declarationMember(context, declaration, headingLevel, nested = false) {
     return md.join('\n\n');
 }
 exports.declarationMember = declarationMember;
+//# sourceMappingURL=member.declaration.js.map

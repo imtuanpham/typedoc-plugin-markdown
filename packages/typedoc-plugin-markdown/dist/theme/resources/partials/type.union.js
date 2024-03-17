@@ -10,3 +10,4 @@ function unionType(context, unionType) {
         .join(` \\| `);
 }
 exports.unionType = unionType;
+//# sourceMappingURL=type.union.js.map

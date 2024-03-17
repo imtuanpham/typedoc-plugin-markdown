@@ -54,3 +54,4 @@ function declarationMemberIdentifier(context, reflection) {
     return md.join(' ');
 }
 exports.declarationMemberIdentifier = declarationMemberIdentifier;
+//# sourceMappingURL=member.declaration.identifier.js.map

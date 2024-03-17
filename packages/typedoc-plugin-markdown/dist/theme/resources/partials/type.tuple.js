@@ -10,3 +10,4 @@ function tupleType(context, tupleType) {
         .join(', ')}]`;
 }
 exports.tupleType = tupleType;
+//# sourceMappingURL=type.tuple.js.map

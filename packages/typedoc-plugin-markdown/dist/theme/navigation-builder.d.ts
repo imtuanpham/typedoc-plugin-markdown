@@ -9,3 +9,4 @@ export declare class NavigationBuilder {
     getGroupChildren(group: ReflectionGroup): any;
     getChildrenOrGroups(reflection: DeclarationReflection): any;
 }
+//# sourceMappingURL=navigation-builder.d.ts.map

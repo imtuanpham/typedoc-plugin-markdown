@@ -57,3 +57,4 @@ function signatureMemberIdentifier(context, signature) {
     return md.join('');
 }
 exports.signatureMemberIdentifier = signatureMemberIdentifier;
+//# sourceMappingURL=member.signature.identifier.js.map

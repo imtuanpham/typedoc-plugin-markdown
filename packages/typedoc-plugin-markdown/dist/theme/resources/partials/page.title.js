@@ -21,3 +21,4 @@ function pageTitle(context, page) {
     return md.join(' ');
 }
 exports.pageTitle = pageTitle;
+//# sourceMappingURL=page.title.js.map

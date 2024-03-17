@@ -46,3 +46,4 @@ export interface PluginOptions {
     anchorPrefix: string;
     namedAnchors: boolean;
 }
+//# sourceMappingURL=models.d.ts.map

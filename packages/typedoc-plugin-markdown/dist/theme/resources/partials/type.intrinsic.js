@@ -9,3 +9,4 @@ function intrinsicType(context, model) {
     return (0, elements_1.backTicks)(model.name);
 }
 exports.intrinsicType = intrinsicType;
+//# sourceMappingURL=type.intrinsic.js.map

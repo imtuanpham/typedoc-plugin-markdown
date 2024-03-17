@@ -7,3 +7,4 @@ import { MarkdownThemeRenderContext } from '../..';
  */
 export declare function memberBadge(context: MarkdownThemeRenderContext, reflection: DeclarationReflection): string;
 /** CSDK END */
+//# sourceMappingURL=member.badge.d.ts.map

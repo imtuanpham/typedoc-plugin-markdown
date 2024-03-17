@@ -118,3 +118,4 @@ export declare class MarkdownThemeRenderContext {
     /** @hidden */
     unknownType: (model: import("typedoc").UnknownType) => string;
 }
+//# sourceMappingURL=markdown-theme-render-context.d.ts.map

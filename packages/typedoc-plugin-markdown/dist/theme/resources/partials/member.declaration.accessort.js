@@ -20,3 +20,4 @@ function declarationMemberAccessor(context, declaration) {
     return '';
 }
 exports.declarationMemberAccessor = declarationMemberAccessor;
+//# sourceMappingURL=member.declaration.accessort.js.map

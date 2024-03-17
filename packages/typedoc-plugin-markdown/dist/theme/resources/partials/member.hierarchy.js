@@ -34,3 +34,4 @@ function getHierarchyType(hierarchyType, isTarget, context) {
         ? (0, elements_1.bold)((0, elements_1.backTicks)(hierarchyType.toString()))
         : context.someType(hierarchyType);
 }
+//# sourceMappingURL=member.hierarchy.js.map

@@ -5,3 +5,4 @@ import { MarkdownPageEvent } from '../../../plugin/events';
  * @category Templates
  */
 export declare function readmeTemplate(context: MarkdownThemeRenderContext, page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>): string;
+//# sourceMappingURL=read-me.d.ts.map

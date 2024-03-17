@@ -20,3 +20,4 @@ function indexSignatureTitle(context, signature) {
     return md.join(' ');
 }
 exports.indexSignatureTitle = indexSignatureTitle;
+//# sourceMappingURL=member.indexsignature.title.js.map

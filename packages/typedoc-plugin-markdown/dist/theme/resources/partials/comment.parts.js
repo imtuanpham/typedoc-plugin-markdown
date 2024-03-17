@@ -44,3 +44,4 @@ function commentParts(context, parts) {
     return md.join('');
 }
 exports.commentParts = commentParts;
+//# sourceMappingURL=comment.parts.js.map

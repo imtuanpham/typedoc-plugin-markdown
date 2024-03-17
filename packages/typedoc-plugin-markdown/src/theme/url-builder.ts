@@ -132,8 +132,10 @@ export class UrlBuilder {
         // Generate index.md for each projectGroup
         const entryFileName = this.options.getValue('entryFileName') as string;
 
+        const projectGroupDirName = slugify(projectGroup.title);
+
         const projectGroupUrl = `${project.name}/${this.getPartName(
-          slugify(projectGroup.title),
+          projectGroupDirName,
           projectGroupIndex,
         )}/${entryFileName}`;
 
@@ -154,6 +156,8 @@ export class UrlBuilder {
           (projectGroupChild, projectGroupChildIndex) => {
             // console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
             this.buildUrlsFromGroup(projectGroupChild, {
+              // CSDK: use the group title as the directory name
+              directory: projectGroupDirName,
               directoryPosition: projectGroupIndex + startIndex,
               pagePosition: projectGroupChildIndex + startIndex,
               ...(parentUrl && { parentUrl: parentUrl }),

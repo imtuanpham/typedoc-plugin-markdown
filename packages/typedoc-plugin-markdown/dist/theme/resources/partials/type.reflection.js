@@ -16,3 +16,4 @@ function reflectionType(context, reflectionType, collapse) {
     return collapse ? (0, elements_1.backTicks)('object') : context.declarationType(root);
 }
 exports.reflectionType = reflectionType;
+//# sourceMappingURL=type.reflection.js.map

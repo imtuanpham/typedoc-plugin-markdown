@@ -8,3 +8,4 @@ function namedTupleType(context, member) {
     return context.someType(member.element);
 }
 exports.namedTupleType = namedTupleType;
+//# sourceMappingURL=type.named-tuple.js.map

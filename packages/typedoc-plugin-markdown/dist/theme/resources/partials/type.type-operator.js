@@ -9,3 +9,4 @@ function typeOperatorType(context, model) {
     return `${(0, elements_1.italic)(model.operator)} ${context.someType(model.target)}`;
 }
 exports.typeOperatorType = typeOperatorType;
+//# sourceMappingURL=type.type-operator.js.map

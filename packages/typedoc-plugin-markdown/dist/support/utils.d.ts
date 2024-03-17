@@ -16,3 +16,4 @@ export declare function stripLineBreaks(str: string, includeHTML?: boolean): str
 export declare function camelToTitleCase(text: string): string;
 export declare function slugify(str: string): string;
 export declare function formatContents(contents: string): string;
+//# sourceMappingURL=utils.d.ts.map

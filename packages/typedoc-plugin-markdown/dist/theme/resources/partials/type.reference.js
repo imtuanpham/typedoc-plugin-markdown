@@ -30,3 +30,4 @@ function referenceType(context, referenceType) {
         : (0, elements_1.backTicks)(referenceType.name);
 }
 exports.referenceType = referenceType;
+//# sourceMappingURL=type.reference.js.map

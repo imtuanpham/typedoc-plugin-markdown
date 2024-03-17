@@ -30,3 +30,4 @@ function getIndexReplacer(context, page) {
     md.push(context.members(page.model, 3));
     return md.join('\n\n');
 }
+//# sourceMappingURL=read-me.js.map

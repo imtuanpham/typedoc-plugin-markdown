@@ -4,3 +4,4 @@ import { MarkdownThemeRenderContext } from '../..';
  * @category Partials
  */
 export declare function reflectionMember(context: MarkdownThemeRenderContext, reflection: DeclarationReflection, headingLevel: number): string;
+//# sourceMappingURL=member.reflection.d.ts.map

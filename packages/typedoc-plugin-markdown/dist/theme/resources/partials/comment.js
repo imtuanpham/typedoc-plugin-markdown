@@ -39,3 +39,4 @@ function comment(context, comment, headingLevel, showSummary = true, showTags = 
     return (0, utils_1.escapeAngleBrackets)(md.join('\n\n'));
 }
 exports.comment = comment;
+//# sourceMappingURL=comment.js.map

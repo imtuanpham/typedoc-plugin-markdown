@@ -4,8 +4,8 @@ module.exports = {
   name: 'CSDK Packages Example',
   plugin: [
     'typedoc-plugin-markdown',
-    'typedoc-plugin-frontmatter',
-    'typedoc-plugin-mdn-links',
+    // 'typedoc-plugin-frontmatter',
+    // 'typedoc-plugin-mdn-links',
   ],
   entryPoints: [path.join(__dirname, '../src/csdk/packages/*')],
   entryPointStrategy: 'packages',

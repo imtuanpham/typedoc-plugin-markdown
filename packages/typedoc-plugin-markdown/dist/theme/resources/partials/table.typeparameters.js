@@ -46,3 +46,4 @@ function typeParametersTable(context, typeParameters) {
     return (0, elements_1.table)(headers, rows);
 }
 exports.typeParametersTable = typeParametersTable;
+//# sourceMappingURL=table.typeparameters.js.map

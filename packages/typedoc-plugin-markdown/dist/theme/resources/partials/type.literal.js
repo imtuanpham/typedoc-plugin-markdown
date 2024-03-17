@@ -11,3 +11,4 @@ function literalType(context, literalType) {
     return `\`\`${JSON.stringify(literalType.value)}\`\``;
 }
 exports.literalType = literalType;
+//# sourceMappingURL=type.literal.js.map

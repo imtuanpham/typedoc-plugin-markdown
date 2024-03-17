@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.26
+
+- Group reflections to directories by `@group`
+- Support `@groupDescription`
+- Hide member inheritance and type hierarchy in member reflection
+
 ## 4.0.0-next.20
 
 ### Patch Changes

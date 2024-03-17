@@ -16,3 +16,4 @@ export declare function generateMarkdown(project: ProjectReflection, out: string
 export declare function renderMarkdown(project: ProjectReflection, outputDirectory: string): Promise<void>;
 export declare function writeFileSync(fileName: string, data: string): void;
 export declare function normalizePath(path: string): string;
+//# sourceMappingURL=renderer.d.ts.map

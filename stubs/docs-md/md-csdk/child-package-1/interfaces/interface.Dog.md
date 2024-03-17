@@ -6,13 +6,11 @@ title: Dog
 
 Description of Dog
 
-## Extends
+## Properties
 
-- [`Animal`](interface.Animal.md)
+### Old Stuff (Deprecated)
 
-## Old Stuff (Deprecated)
-
-### nickName
+#### nickName
 
 > **nickName**: `string`
 
@@ -20,9 +18,9 @@ Description of Dog
 Use [Dog.breed](interface.Dog.md#breed) instead.
 :::
 
-## Other
+### Other
 
-### breed <Badge type="beta" text="Beta" />
+#### breed <Badge type="beta" text="Beta" />
 
 > **breed**: `string`
 
@@ -30,10 +28,6 @@ Breed of dog
 
 ***
 
-### name
+#### name
 
 > **name**?: `string`
-
-#### Inherited from
-
-[`Animal`](interface.Animal.md).[`name`](interface.Animal.md#name)

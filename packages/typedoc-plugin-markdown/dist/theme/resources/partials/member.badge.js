@@ -26,3 +26,4 @@ function memberBadge(context, reflection) {
 }
 exports.memberBadge = memberBadge;
 /** CSDK END */
+//# sourceMappingURL=member.badge.js.map

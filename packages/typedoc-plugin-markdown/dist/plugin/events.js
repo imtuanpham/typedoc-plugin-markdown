@@ -55,3 +55,4 @@ class MarkdownPageEvent extends typedoc_1.Event {
 exports.MarkdownPageEvent = MarkdownPageEvent;
 MarkdownPageEvent.BEGIN = 'beginPage';
 MarkdownPageEvent.END = 'endPage';
+//# sourceMappingURL=events.js.map
