@@ -100,3 +100,4 @@ function getComments(property) {
     }
     return property.comment;
 }
+//# sourceMappingURL=table.properties.js.map

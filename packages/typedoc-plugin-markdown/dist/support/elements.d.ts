@@ -15,3 +15,4 @@ export declare const codeBlock: (content: string) => string;
 export declare const table: (headers: string[], rows: string[][]) => string;
 export declare const blockQuoteBlock: (content: string) => string;
 export declare const indentBlock: (content: string) => string;
+//# sourceMappingURL=elements.d.ts.map

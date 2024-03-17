@@ -25,3 +25,4 @@ function reflectionTemplate(context, page) {
     return md.join('\n\n');
 }
 exports.reflectionTemplate = reflectionTemplate;
+//# sourceMappingURL=reflection.js.map

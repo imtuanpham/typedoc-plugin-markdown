@@ -11,7 +11,7 @@
     "lint:ts": "eslint ./src --ext .ts",
     "lint:markdown": "npm run docs && markdownlint ./out/md",
     "prebuild": "rm -rf dist",
-    "build": "tsc",
+    "build": "tsc --sourceMap",
     "build:watch": "tsc --watch",
     "test": "jest --colors",
     "prestubs": "npm run build",

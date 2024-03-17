@@ -6,3 +6,4 @@ export declare class UrlMapping<Model = any> {
     constructor(url: string, model: Model, template: RenderTemplate<MarkdownPageEvent<Model>>);
 }
 export type RenderTemplate<T> = (data: T) => string;
+//# sourceMappingURL=url-mapping.d.ts.map

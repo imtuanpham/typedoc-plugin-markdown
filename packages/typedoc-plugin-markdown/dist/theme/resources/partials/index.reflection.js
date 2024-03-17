@@ -63,3 +63,4 @@ function getList(context, group) {
     `- [${(0, utils_1.escapeChars)(child.name)}](${context.relativeURL(child.url)})${context.memberBadge(child)}`);
     return children.join('\n');
 }
+//# sourceMappingURL=index.reflection.js.map

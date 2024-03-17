@@ -25,3 +25,4 @@ function memberTemplate(context, page) {
     return md.join('\n\n');
 }
 exports.memberTemplate = memberTemplate;
+//# sourceMappingURL=member.js.map

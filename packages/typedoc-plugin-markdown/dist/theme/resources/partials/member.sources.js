@@ -23,3 +23,4 @@ function sources(context, reflection, headingLevel) {
     return md.join('\n\n');
 }
 exports.sources = sources;
+//# sourceMappingURL=member.sources.js.map

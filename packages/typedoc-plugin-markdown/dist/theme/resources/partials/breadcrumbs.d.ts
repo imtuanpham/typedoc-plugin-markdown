@@ -6,3 +6,4 @@ import { MarkdownPageEvent } from '../../../plugin/events';
  * @mergeTarget
  */
 export declare function breadcrumbs(context: MarkdownThemeRenderContext, page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>): string;
+//# sourceMappingURL=breadcrumbs.d.ts.map

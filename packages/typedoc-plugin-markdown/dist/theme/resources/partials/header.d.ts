@@ -5,3 +5,4 @@ import { MarkdownPageEvent } from '../../../plugin/events';
  * @category Partials
  */
 export declare function header(context: MarkdownThemeRenderContext, page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>): string;
+//# sourceMappingURL=header.d.ts.map

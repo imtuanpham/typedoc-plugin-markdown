@@ -44,3 +44,4 @@ function reflectionMember(context, reflection, headingLevel) {
     return md.join('\n\n');
 }
 exports.reflectionMember = reflectionMember;
+//# sourceMappingURL=member.reflection.js.map

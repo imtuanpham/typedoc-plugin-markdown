@@ -10,3 +10,4 @@ import { MarkdownPageEvent } from '../../../plugin/events';
  * @category Templates
  */
 export declare function projectKindTemplate(context: MarkdownThemeRenderContext, page: MarkdownPageEvent<ProjectReflection>): string;
+//# sourceMappingURL=project-kind.d.ts.map

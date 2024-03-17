@@ -34,3 +34,4 @@ export declare class MarkdownTheme extends Theme {
     getUrls(project: ProjectReflection): import("typedoc").UrlMapping<any>[];
     getNavigation(project: ProjectReflection): import("./models").NavigationItem[];
 }
+//# sourceMappingURL=markdown-theme.d.ts.map

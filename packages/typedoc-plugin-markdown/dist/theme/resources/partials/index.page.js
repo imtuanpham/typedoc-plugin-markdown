@@ -51,3 +51,4 @@ function pageIndex(context, page, headingLevel) {
     return md.join('\n\n');
 }
 exports.pageIndex = pageIndex;
+//# sourceMappingURL=index.page.js.map

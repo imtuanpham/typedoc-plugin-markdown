@@ -51,3 +51,4 @@ function getComments(property) {
     }
     return property.comment;
 }
+//# sourceMappingURL=table.enum-members.js.map

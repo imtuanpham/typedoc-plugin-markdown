@@ -131,3 +131,4 @@ function normalizePath(path) {
     return path.replace(/\\/g, '/');
 }
 exports.normalizePath = normalizePath;
+//# sourceMappingURL=renderer.js.map

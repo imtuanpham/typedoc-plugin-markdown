@@ -60,3 +60,4 @@ function signatureMember(context, signature, headingLevel, showSources = true) {
     return md.join('\n\n');
 }
 exports.signatureMember = signatureMember;
+//# sourceMappingURL=member.signature.js.map

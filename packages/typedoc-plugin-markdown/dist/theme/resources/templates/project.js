@@ -29,3 +29,4 @@ function projectTemplate(context, page) {
     return md.join('\n\n');
 }
 exports.projectTemplate = projectTemplate;
+//# sourceMappingURL=project.js.map

@@ -114,7 +114,8 @@ class UrlBuilder {
                 /** CSDK START */
                 // Generate index.md for each projectGroup
                 const entryFileName = this.options.getValue('entryFileName');
-                const projectGroupUrl = `${project.name}/${this.getPartName((0, utils_1.slugify)(projectGroup.title), projectGroupIndex)}/${entryFileName}`;
+                const projectGroupDirName = (0, utils_1.slugify)(projectGroup.title);
+                const projectGroupUrl = `${project.name}/${this.getPartName(projectGroupDirName, projectGroupIndex)}/${entryFileName}`;
                 // clone the project with only the current group
                 const groupProject = Object.create(project);
                 groupProject.name = projectGroup.title;
@@ -127,6 +128,8 @@ class UrlBuilder {
                 (projectGroupChild, projectGroupChildIndex) => {
                     // console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
                     this.buildUrlsFromGroup(projectGroupChild, {
+                        // CSDK: use the group title as the directory name
+                        directory: projectGroupDirName,
                         directoryPosition: projectGroupIndex + startIndex,
                         pagePosition: projectGroupChildIndex + startIndex,
                         ...(parentUrl && { parentUrl: parentUrl }),
@@ -415,3 +418,4 @@ class UrlBuilder {
     }
 }
 exports.UrlBuilder = UrlBuilder;
+//# sourceMappingURL=url-builder.js.map

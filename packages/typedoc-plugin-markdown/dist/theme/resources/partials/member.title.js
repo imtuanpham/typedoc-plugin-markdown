@@ -21,3 +21,4 @@ function memberTitle(context, reflection, typeParams = false) {
     return md.join('');
 }
 exports.memberTitle = memberTitle;
+//# sourceMappingURL=member.title.js.map

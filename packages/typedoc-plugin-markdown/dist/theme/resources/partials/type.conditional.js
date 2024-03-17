@@ -25,3 +25,4 @@ function conditionalType(context, conditionalType) {
     return md.join(' ');
 }
 exports.conditionalType = conditionalType;
+//# sourceMappingURL=type.conditional.js.map

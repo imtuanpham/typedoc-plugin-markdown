@@ -3,6 +3,12 @@ export interface SomePropInterface {
 }
 
 /**
+ * @groupDescription Group 1
+ * Group 1 description
+ * Group 1 description more and more
+ */
+
+/**
  * This is a function with multiple arguments and a return value.
  *
  * @example
@@ -18,7 +24,7 @@ export interface SomePropInterface {
  * @returns This is a numeric return value.
  * @beta
  *
- * @category Category 1
+ * @group Group 1
  *
  */
 export function betaFunction(
@@ -36,7 +42,7 @@ export function betaFunction(
  * @returns This is a numeric return value.
  * @alpha
  *
- * @category Category 1
+ * @group Group 1
  */
 export const alphaFunction = (someParam: number) => {
   return 0;
@@ -48,7 +54,7 @@ export const alphaFunction = (someParam: number) => {
  * @param someParam  This is some numeric parameter.
  * @returns This is a numeric return value.
  *
- * @category Category 2
+ * @group Group 2
  */
 export const someFunction = (someParam: number) => {
   return 0;
@@ -60,7 +66,7 @@ export const someFunction = (someParam: number) => {
  * @param someParam  This is some numeric parameter.
  * @returns This is a numeric return value.
  *
- * @category Category 2
+ * @group Group 2
  */
 export const someFunction2 = (someParam: number) => {
   return 0;

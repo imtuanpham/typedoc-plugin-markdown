@@ -15,3 +15,4 @@ function referenceMember(context, props) {
     return `Renames and re-exports [${referenced.name}](${context.urlTo(referenced)})`;
 }
 exports.referenceMember = referenceMember;
+//# sourceMappingURL=member.reference.js.map

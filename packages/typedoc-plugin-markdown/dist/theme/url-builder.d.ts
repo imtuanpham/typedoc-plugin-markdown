@@ -32,3 +32,4 @@ export declare class UrlBuilder {
      */
     private getTemplateMapping;
 }
+//# sourceMappingURL=url-builder.d.ts.map

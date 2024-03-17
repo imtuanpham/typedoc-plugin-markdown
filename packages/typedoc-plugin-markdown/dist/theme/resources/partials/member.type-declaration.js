@@ -33,3 +33,4 @@ function typeDeclarationMember(context, typeDeclaration, headingLevel, parentNam
     return md.join('\n');
 }
 exports.typeDeclarationMember = typeDeclarationMember;
+//# sourceMappingURL=member.type-declaration.js.map

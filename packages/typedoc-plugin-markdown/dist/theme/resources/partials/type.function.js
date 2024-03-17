@@ -23,3 +23,4 @@ function functionType(context, modelSignatures) {
     return functions.join('');
 }
 exports.functionType = functionType;
+//# sourceMappingURL=type.function.js.map

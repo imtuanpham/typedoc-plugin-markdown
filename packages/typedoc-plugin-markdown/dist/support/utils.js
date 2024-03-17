@@ -78,3 +78,4 @@ function formatContents(contents) {
     return (contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n');
 }
 exports.formatContents = formatContents;
+//# sourceMappingURL=utils.js.map

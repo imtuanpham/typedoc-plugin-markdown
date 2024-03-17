@@ -18,3 +18,4 @@ export declare const FormatStyle: {
     readonly Table: "table";
 };
 export type FormatStyle = (typeof FormatStyle)[keyof typeof FormatStyle];
+//# sourceMappingURL=custom-maps.d.ts.map

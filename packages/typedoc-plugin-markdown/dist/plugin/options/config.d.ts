@@ -164,3 +164,4 @@ export declare const preserveAnchorCasing: DeclarationOption;
  */
 export declare const anchorPrefix: DeclarationOption;
 export declare const namedAnchors: DeclarationOption;
+//# sourceMappingURL=config.d.ts.map

@@ -72,3 +72,4 @@ const typeAndParent = (context, props) => {
     }
     return 'void';
 };
+//# sourceMappingURL=member.inheritance.js.map

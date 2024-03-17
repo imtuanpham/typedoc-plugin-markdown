@@ -32,3 +32,4 @@ function breadcrumbs(context, page) {
     return md.length > 1 ? `${md.join(' > ')}` : '';
 }
 exports.breadcrumbs = breadcrumbs;
+//# sourceMappingURL=breadcrumbs.js.map

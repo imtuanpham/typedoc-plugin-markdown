@@ -8,3 +8,4 @@ import { Application } from 'typedoc';
  * The main plugin entrypoint containing all bootstrapping logic.
  */
 export declare function load(app: Application): void;
+//# sourceMappingURL=bootstrap.d.ts.map

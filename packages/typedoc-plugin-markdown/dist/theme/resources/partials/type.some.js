@@ -61,3 +61,4 @@ function someType(context, someType, collapse = false) {
         : (0, elements_1.backTicks)(someType === null || someType === void 0 ? void 0 : someType.toString());
 }
 exports.someType = someType;
+//# sourceMappingURL=type.some.js.map

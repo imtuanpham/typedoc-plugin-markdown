@@ -4,3 +4,4 @@ import { MarkdownThemeRenderContext } from '../..';
  * @category Partials
  */
 export declare function declarationType(context: MarkdownThemeRenderContext, declarationReflection: DeclarationReflection, collapse?: boolean): string;
+//# sourceMappingURL=type.declaration.d.ts.map

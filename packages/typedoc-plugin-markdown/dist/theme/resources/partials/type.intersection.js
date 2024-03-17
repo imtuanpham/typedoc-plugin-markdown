@@ -10,3 +10,4 @@ function intersectionType(context, model) {
         .join(' & ');
 }
 exports.intersectionType = intersectionType;
+//# sourceMappingURL=type.intersection.js.map

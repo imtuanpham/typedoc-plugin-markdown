@@ -14,14 +14,12 @@ title: child-package-1
 - [SomePropInterface](interfaces/interface.SomePropInterface.md)
 - [SomeProps](interfaces/interface.SomeProps.md)
 
-## Functions
+## Group 1
 
-### Category 1
+- [alphaFunction](group-1/function.alphaFunction.md) <Badge type="alpha" text="Alpha" />
+- [betaFunction](group-1/function.betaFunction.md) <Badge type="beta" text="Beta" />
 
-- [alphaFunction](functions/function.alphaFunction.md) <Badge type="alpha" text="Alpha" />
-- [betaFunction](functions/function.betaFunction.md) <Badge type="beta" text="Beta" />
+## Group 2
 
-### Category 2
-
-- [someFunction](functions/function.someFunction.md)
-- [someFunction2](functions/function.someFunction2.md)
+- [someFunction](group-2/function.someFunction.md)
+- [someFunction2](group-2/function.someFunction2.md)

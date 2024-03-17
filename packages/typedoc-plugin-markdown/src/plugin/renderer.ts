@@ -84,6 +84,7 @@ export async function renderMarkdown(
   );
 
   output.urls = this.theme!.getUrls(project);
+
   output.navigation = this.theme!.getNavigation(project);
 
   await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));

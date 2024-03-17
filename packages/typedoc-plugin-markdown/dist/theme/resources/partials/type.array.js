@@ -11,3 +11,4 @@ function arrayType(context, arrayType) {
         : `${theType}[]`;
 }
 exports.arrayType = arrayType;
+//# sourceMappingURL=type.array.js.map

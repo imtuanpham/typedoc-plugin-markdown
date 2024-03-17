@@ -10,3 +10,4 @@ export declare function getProjectDisplayName(project: ProjectReflection, includ
 export declare function hasIndex(reflection: DeclarationReflection | ProjectReflection): boolean | undefined;
 export declare function hasTOC(reflection: DeclarationReflection, options: Options): boolean;
 export declare function getModifier(reflection: DeclarationReflection): "get" | "Abstract" | "Private" | "Readonly" | "Static" | "set" | null;
+//# sourceMappingURL=helpers.d.ts.map

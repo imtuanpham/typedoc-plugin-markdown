@@ -12,3 +12,4 @@ Object.defineProperty(exports, "MarkdownRendererEvent", { enumerable: true, get:
 var theme_1 = require("./theme");
 Object.defineProperty(exports, "MarkdownTheme", { enumerable: true, get: function () { return theme_1.MarkdownTheme; } });
 Object.defineProperty(exports, "MarkdownThemeRenderContext", { enumerable: true, get: function () { return theme_1.MarkdownThemeRenderContext; } });
+//# sourceMappingURL=index.js.map

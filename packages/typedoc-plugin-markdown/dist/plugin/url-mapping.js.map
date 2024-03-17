@@ -1,0 +1,1 @@
+{"version":3,"file":"url-mapping.js","sourceRoot":"","sources":["../../src/plugin/url-mapping.ts"],"names":[],"mappings":";;;AAEA,MAAa,UAAU;IAOrB,YACE,GAAW,EACX,KAAY,EACZ,QAAkD;QAElD,IAAI,CAAC,GAAG,GAAG,GAAG,CAAC;QACf,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;QACnB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;IAC3B,CAAC;CACF;AAhBD,gCAgBC"}

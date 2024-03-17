@@ -56,3 +56,4 @@ function indentBlock(content) {
     })
         .join('\n');
 }
+//# sourceMappingURL=type.declaration.js.map
