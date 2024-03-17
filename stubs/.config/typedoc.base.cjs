@@ -8,5 +8,5 @@ module.exports = {
   cleanOutputDir: true,
   githubPages: false,
   sort: ['kind', 'instance-first'],
-  disableSources: false,
+  disableSources: true,
 };

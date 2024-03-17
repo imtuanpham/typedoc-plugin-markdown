@@ -66,7 +66,14 @@ export class UrlBuilder {
         EntryPointStrategy.Packages &&
       !Boolean(project.groups)
     ) {
+      // [tuan]: each projectChild is a module (e.g., @sisense/sdk-ui, @sisense/sdk-data, etc)
       project.children?.forEach((projectChild, projectChildIndex) => {
+        /** CSDK START */
+        // Remove @sisense/ prefix from module name
+        projectChild.name = projectChild.name.replace('@sisense/', '');
+        /** CSDK END */
+
+        // console.log('projectChild', projectChild.name, projectChild.url);
         const startIndex = hasReadme ? 2 : 1;
 
         const directoryPosition = projectChildIndex + startIndex;
@@ -119,10 +126,38 @@ export class UrlBuilder {
         });
       });
     } else {
+      // [tuan]: each projectGroup is a kind (e.g., functions, interfaces, etc)
       project.groups?.forEach((projectGroup, projectGroupIndex) => {
+        /** CSDK START */
+        // Generate index.md for each projectGroup
+        const entryFileName = this.options.getValue('entryFileName') as string;
+
+        const projectGroupDirName = slugify(projectGroup.title);
+
+        const projectGroupUrl = `${project.name}/${this.getPartName(
+          projectGroupDirName,
+          projectGroupIndex,
+        )}/${entryFileName}`;
+
+        // clone the project with only the current group
+        const groupProject = Object.create(project);
+        groupProject.name = projectGroup.title;
+        groupProject.groups = groupProject.groups?.filter((group) => group.title === projectGroup.title);
+
+        this.urls.push(
+          new UrlMapping(projectGroupUrl, groupProject as any, this.theme.projectKindTemplate),
+        );
+        /** CSDK END */
+
+        // console.log('--projectGroup', projectGroupUrl);
+
         projectGroup.children?.forEach(
+          // [tuan]: each projectGroupChild is an API item (e.g., Chart, ChartProps, etc)
           (projectGroupChild, projectGroupChildIndex) => {
+            // console.log('----projectGroupChild', projectGroupChild.name, projectGroupChild.url);
             this.buildUrlsFromGroup(projectGroupChild, {
+              // CSDK: use the group title as the directory name
+              directory: projectGroupDirName,
               directoryPosition: projectGroupIndex + startIndex,
               pagePosition: projectGroupChildIndex + startIndex,
               ...(parentUrl && { parentUrl: parentUrl }),
@@ -137,6 +172,7 @@ export class UrlBuilder {
     reflection: DeclarationReflection,
     options: UrlOption,
   ) {
+
     const mapping = this.getTemplateMapping(reflection.kind);
     if (mapping) {
       const directory = options.directory || mapping.directory;
@@ -175,9 +211,32 @@ export class UrlBuilder {
         }
       } else {
         reflection.groups?.forEach((group, groupIndex) => {
+          /** CSDK START */
+          // generate index.md for each functions group of namespace
+          if (group.title === 'Functions') {
+            const entryFileName = this.options.getValue('entryFileName') as string;
+            const groupUrl = `${url.replace(entryFileName, '')}${this.getPartName(
+              slugify(group.title),
+              groupIndex,
+            )}/${entryFileName}`;
+
+            // clone the reflection to customize the index.md
+            const groupReflection = Object.create(reflection);
+            groupReflection.name = group.title;
+
+            this.urls.push(
+              new UrlMapping(groupUrl, groupReflection as any, this.theme.projectKindTemplate),
+            );
+
+            // console.log('------group', group.title, groupUrl);
+          }
+          /** CSDK END */
+
           if (group.categories) {
             group.categories.forEach((category, categoryIndex) => {
+              // console.log('--------category', category.title);
               category.children.forEach((categoryChild, categoryChildIndex) => {
+                // console.log('--------categoryChild', categoryChild.name);
                 const mapping = this.getTemplateMapping(categoryChild.kind);
                 this.buildUrlsFromGroup(categoryChild, {
                   parentUrl: url,
@@ -192,6 +251,7 @@ export class UrlBuilder {
             });
           } else {
             group.children.forEach((groupChild, groupChildIndex) => {
+              // console.log('--------groupChild', groupChild.name);
               const mapping = this.getTemplateMapping(groupChild.kind);
               this.buildUrlsFromGroup(groupChild, {
                 parentUrl: url,
@@ -225,7 +285,13 @@ export class UrlBuilder {
         : `${kindAlias}.${friendlyName}`;
     }
 
-    const alias = reflection.getAlias().replace(/^_/, '');
+    let alias = reflection.getAlias().replace(/^_/, '');
+
+    /** CSDK START */
+    // TypeDoc checks and adds a suffix '-#' to an alias if it's a duplicate across all modules
+    // This is not what we want as some alias may be the same across modules, so we remove the prefix
+    alias = alias.replace(/-\d+$/, '');
+    /** CSDK END */
 
     const parentDir = options.parentUrl
       ? path.dirname(options.parentUrl)

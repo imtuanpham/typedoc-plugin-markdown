@@ -42,6 +42,12 @@ export class MarkdownTheme extends Theme {
     return this.getRenderContext(pageEvent).projectTemplate(pageEvent);
   };
 
+  /** CSDK START */
+  projectKindTemplate = (pageEvent: MarkdownPageEvent<ProjectReflection>) => {
+    return this.getRenderContext(pageEvent).projectKindTemplate(pageEvent);
+  };
+  /** CSDK END */
+
   reflectionTemplate = (
     pageEvent: MarkdownPageEvent<DeclarationReflection>,
   ) => {

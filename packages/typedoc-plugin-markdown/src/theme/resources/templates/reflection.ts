@@ -21,6 +21,10 @@ export function reflectionTemplate(
   }
 
   if (!context.options.getValue('hidePageTitle')) {
+    /** CSDK START */
+    // add title metadata
+    md.push(`---\ntitle: ${page.model.name}\n---`);
+    /** CSDK END */
     md.push(heading(1, context.pageTitle(page)));
   }
 

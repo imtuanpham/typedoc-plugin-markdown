@@ -28,7 +28,7 @@ export async function generateMarkdown(
   } else {
     this.logger.info(`Documentation generated at ${out}`);
 
-    this.logger.verbose(`Markdown rendering took ${Date.now() - start}ms`);
+    this.logger.info(`Markdown rendering took ${Date.now() - start}ms`);
   }
 }
 
@@ -84,13 +84,14 @@ export async function renderMarkdown(
   );
 
   output.urls = this.theme!.getUrls(project);
+
   output.navigation = this.theme!.getNavigation(project);
 
   await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
 
   this.preRenderAsyncJobs = [];
 
-  this.application.logger.verbose(
+  this.application.logger.info(
     `There are ${output.urls?.length} pages to write.`,
   );
 

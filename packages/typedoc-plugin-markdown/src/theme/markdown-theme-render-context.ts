@@ -22,6 +22,7 @@ import { signatureMemberIdentifier } from './resources/partials/member.signature
 import { signatureMember } from './resources/partials/member.signature';
 import { sources } from './resources/partials/member.sources';
 import { memberTitle } from './resources/partials/member.title';
+import { memberBadge } from './resources/partials/member.badge';
 import { member } from './resources/partials/member';
 import { typeDeclarationMember } from './resources/partials/member.type-declaration';
 import { members } from './resources/partials/members';
@@ -50,6 +51,7 @@ import { typeOperatorType } from './resources/partials/type.type-operator';
 import { unionType } from './resources/partials/type.union';
 import { unknownType } from './resources/partials/type.unknown';
 import { memberTemplate } from './resources/templates/member';
+import { projectKindTemplate } from './resources/templates/project-kind';
 import { projectTemplate } from './resources/templates/project';
 import { readmeTemplate } from './resources/templates/read-me';
 import { reflectionTemplate } from './resources/templates/reflection';
@@ -101,6 +103,8 @@ export class MarkdownThemeRenderContext {
   /** @hidden */
   memberTemplate = bind(memberTemplate, this);
   /** @hidden */
+  projectKindTemplate = bind(projectKindTemplate, this);
+  /** @hidden */
   projectTemplate = bind(projectTemplate, this);
   /** @hidden */
   readmeTemplate = bind(readmeTemplate, this);
@@ -146,6 +150,10 @@ export class MarkdownThemeRenderContext {
   sources = bind(sources, this);
   /** @hidden */
   memberTitle = bind(memberTitle, this);
+  /** CSDK START */
+  /** @hidden */
+  memberBadge = bind(memberBadge, this);
+  /** CSDK END */
   /** @hidden */
   member = bind(member, this);
   /** @hidden */

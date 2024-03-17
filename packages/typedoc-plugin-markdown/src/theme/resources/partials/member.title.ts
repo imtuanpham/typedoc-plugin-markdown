@@ -15,6 +15,10 @@ export function memberTitle(
 
   md.push(`${escapeChars(reflection.name)}`);
 
+  /** CSDK START */
+  md.push(context.memberBadge(reflection));
+  /** CSDK END */
+
   if (typeParams && reflection.typeParameters) {
     const typeParameters = reflection.typeParameters
       .map((typeParameter) => typeParameter.name)

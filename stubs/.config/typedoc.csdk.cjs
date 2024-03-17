@@ -1,0 +1,27 @@
+const path = require('path');
+module.exports = {
+  ...require('./typedoc.base.cjs'),
+  name: 'CSDK Packages Example',
+  plugin: [
+    'typedoc-plugin-markdown',
+    // 'typedoc-plugin-frontmatter',
+    // 'typedoc-plugin-mdn-links',
+  ],
+  entryPoints: [path.join(__dirname, '../src/csdk/packages/*')],
+  entryPointStrategy: 'packages',
+  includeVersion: true,
+  githubPages: false,
+  outputFileStrategy: 'members',
+  flattenOutputFiles: false,
+  entryFileName: 'index.md',
+  indexFileName: 'index.md',
+  indexPageTitle: 'Compose SDK',
+  skipIndexPage: false,
+  excludeGroups: false,
+  hidePageHeader: true,
+  hidePageTitle: false,
+  hideBreadcrumbs: true,
+  hideInPageTOC: true,
+  titleTemplate: '{kind} {name}',
+  propertiesFormat: 'list',
+};

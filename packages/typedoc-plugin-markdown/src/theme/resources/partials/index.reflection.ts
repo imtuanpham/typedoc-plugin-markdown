@@ -31,6 +31,14 @@ export function reflectionIndex(
         });
       } else {
         md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
+
+        /** CSDK START */
+        // Include groupDescription
+        if (reflectionGroup.description) {
+          md.push(reflectionGroup.description[0].text + '\n');
+        }
+        /** CSDK END */
+
         md.push(getGroup(context, reflectionGroup) + '\n');
       }
     });
@@ -75,7 +83,8 @@ function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup | 
 function getList(context: MarkdownThemeRenderContext, group: ReflectionGroup | ReflectionCategory) {
   const children = group.children.map(
     (child) =>
-      `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
+      // CSDK: add member badge
+      `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})${context.memberBadge(child)}`,
   );
   return children.join('\n');
 }
