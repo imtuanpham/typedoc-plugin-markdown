@@ -23,6 +23,12 @@ function reflectionIndex(context, reflection, headingLevel) {
             }
             else {
                 md.push((0, elements_1.heading)(subHeadingLevel, reflectionGroup.title) + '\n');
+                /** CSDK START */
+                // Include groupDescription
+                if (reflectionGroup.description) {
+                    md.push(reflectionGroup.description[0].text + '\n');
+                }
+                /** CSDK END */
                 md.push(getGroup(context, reflectionGroup) + '\n');
             }
         });

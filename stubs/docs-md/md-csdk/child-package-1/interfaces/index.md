@@ -2,6 +2,10 @@
 title: Interfaces
 ---
 
+This is package description
+
+More description
+
 # Interfaces
 
 - [Animal](interface.Animal.md)

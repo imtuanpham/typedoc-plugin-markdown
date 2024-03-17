@@ -3,12 +3,6 @@ export interface SomePropInterface {
 }
 
 /**
- * @groupDescription Group 1
- * Group 1 description
- * Group 1 description more and more
- */
-
-/**
  * This is a function with multiple arguments and a return value.
  *
  * @example
